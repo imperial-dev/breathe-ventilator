@@ -35,7 +35,7 @@ try:
               else:
                 p.ChangeFrequency(60)
                 q.ChangeFrequency(80)
-                
+
                 while Patient.Flatlining:
                         for i in range(20):
                                 p.ChangeDutyCycle(80+i)
