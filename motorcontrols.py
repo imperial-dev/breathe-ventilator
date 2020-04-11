@@ -12,22 +12,22 @@ p.start(0)
 q.start(0)
 
 try:
-        while True:
+        while True && Patient.LungVolume < Patient.LungCapacity:
               if Patient.Flatlining == False:
                       for i in range(100):
-                            p.ChangeDutyCycle(i)
+                            p.ChangeDutyCycle(i *(Patient.LungVolume * 0.005))
                             time.sleep(0.02)
                       for i in range(100):
-                            p.ChangeDutyCycle(100-i)
+                            p.ChangeDutyCycle((100-i)*(Patient.LungVolume * 0.005))
                             time.sleep(0.02)
 
                       p.ChangeDutyCycle(0)
 
                       for i in range(100):
-                            q.ChangeDutyCycle(i)
+                            q.ChangeDutyCycle(i *(Patient.LungVolume * 0.005))
                             time.sleep(0.02)
                       for i in range(100):
-                            q.ChangeDutyCycle(100-i)
+                            q.ChangeDutyCycle((100-i) *(Patient.LungVolume * 0.005))
                             time.sleep(0.02)
 
                       q.ChangeDutyCycle(0)
@@ -38,14 +38,14 @@ try:
 
                 while Patient.Flatlining:
                         for i in range(20):
-                                p.ChangeDutyCycle(80+i)
+                                p.ChangeDutyCycle((80+i)*(Patient.LungVolume * 0.005)
                                 time.sleep(0.016)
-                                q.ChangeDutyCycle(100-i)
+                                q.ChangeDutyCycle((100-i)*(Patient.LungVolume * 0.005)
                                 time.sleep(0.016)
                         for i in range(20):
-                                p.ChangeDutyCycle(100-i)
+                                p.ChangeDutyCycle((100-i)*(Patient.LungVolume * 0.005))
                                 time.sleep(0.016)
-                                q.ChangeDutyCycle(80+i)
+                                q.ChangeDutyCycle((80+i)*(Patient.LungVolume * 0.005))
                                 time.sleep(0.016)
                          p.ChangeDutyCycle(80)
                          q.ChangeDutyCycle(100)
